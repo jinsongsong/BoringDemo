@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8194DA991ED28A9900EDF3F4 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8194DA981ED28A9900EDF3F4 /* Speech.framework */; };
+		8194DA9C1ED28F8800EDF3F4 /* NFSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */; };
+		8194DA9F1ED2923100EDF3F4 /* 123.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8194DA9E1ED2923100EDF3F4 /* 123.mp3 */; };
+		81F140781ECC214A004621A3 /* EMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F140771ECC214A004621A3 /* EMAlertView.m */; };
 		81FCDA2F1EBDB354008E581D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FCDA2E1EBDB354008E581D /* main.m */; };
 		81FCDA321EBDB354008E581D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FCDA311EBDB354008E581D /* AppDelegate.m */; };
 		81FCDA351EBDB354008E581D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FCDA341EBDB354008E581D /* ViewController.m */; };
@@ -35,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8194DA981ED28A9900EDF3F4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		8194DA9A1ED28F8800EDF3F4 /* NFSpeechViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFSpeechViewController.h; sourceTree = "<group>"; };
+		8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFSpeechViewController.m; sourceTree = "<group>"; };
+		8194DA9E1ED2923100EDF3F4 /* 123.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 123.mp3; sourceTree = "<group>"; };
+		81F140761ECC214A004621A3 /* EMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertView.h; sourceTree = "<group>"; };
+		81F140771ECC214A004621A3 /* EMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertView.m; sourceTree = "<group>"; };
 		81FCDA2A1EBDB354008E581D /* LabelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FCDA2E1EBDB354008E581D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		81FCDA301EBDB354008E581D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8194DA991ED28A9900EDF3F4 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8194DA971ED28A9800EDF3F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8194DA981ED28A9900EDF3F4 /* Speech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		81FCDA211EBDB354008E581D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +104,7 @@
 				81FCDA461EBDB354008E581D /* LabelDemoTests */,
 				81FCDA511EBDB354008E581D /* LabelDemoUITests */,
 				81FCDA2B1EBDB354008E581D /* Products */,
+				8194DA971ED28A9800EDF3F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +125,11 @@
 				81FCDA311EBDB354008E581D /* AppDelegate.m */,
 				81FCDA331EBDB354008E581D /* ViewController.h */,
 				81FCDA341EBDB354008E581D /* ViewController.m */,
+				8194DA9A1ED28F8800EDF3F4 /* NFSpeechViewController.h */,
+				8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */,
+				81F140761ECC214A004621A3 /* EMAlertView.h */,
+				81F140771ECC214A004621A3 /* EMAlertView.m */,
+				8194DA9E1ED2923100EDF3F4 /* 123.mp3 */,
 				81FCDA361EBDB354008E581D /* Main.storyboard */,
 				81FCDA391EBDB354008E581D /* Assets.xcassets */,
 				81FCDA3B1EBDB354008E581D /* LaunchScreen.storyboard */,
@@ -250,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81FCDA3D1EBDB354008E581D /* LaunchScreen.storyboard in Resources */,
+				8194DA9F1ED2923100EDF3F4 /* 123.mp3 in Resources */,
 				81FCDA3A1EBDB354008E581D /* Assets.xcassets in Resources */,
 				81FCDA381EBDB354008E581D /* Main.storyboard in Resources */,
 			);
@@ -277,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				81FCDA351EBDB354008E581D /* ViewController.m in Sources */,
+				8194DA9C1ED28F8800EDF3F4 /* NFSpeechViewController.m in Sources */,
+				81F140781ECC214A004621A3 /* EMAlertView.m in Sources */,
 				81FCDA321EBDB354008E581D /* AppDelegate.m in Sources */,
 				81FCDA2F1EBDB354008E581D /* main.m in Sources */,
 			);
@@ -431,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U4RDXYP8FW;
 				INFOPLIST_FILE = LabelDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YiLeYuan.LabelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U4RDXYP8FW;
 				INFOPLIST_FILE = LabelDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YiLeYuan.LabelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +548,7 @@
 				81FCDA591EBDB354008E581D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81FCDA5A1EBDB354008E581D /* Build configuration list for PBXNativeTarget "LabelDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +557,7 @@
 				81FCDA5C1EBDB354008E581D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81FCDA5D1EBDB354008E581D /* Build configuration list for PBXNativeTarget "LabelDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +566,7 @@
 				81FCDA5F1EBDB354008E581D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

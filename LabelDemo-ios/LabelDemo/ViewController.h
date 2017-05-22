@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+- (void)read:(NSString *)str;
+
+- (void)stopRead;
 
 @end
 
