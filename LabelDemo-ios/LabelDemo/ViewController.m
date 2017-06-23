@@ -58,61 +58,62 @@
     NSString *str = [NSString stringWithContentsOfFile:resourcePath encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"---------------%@",str);
     
-//    static FMDatabase *db;
-//
-//    db = [FMDatabase databaseWithPath:resourcePath];
-//    if (![db open]) {
-//        [db close];
-//        return;
-//    }
-//
-//    if ([db open]) {
-//        
-//        NSString *sql=[db stringForQuery:@"SELECT * FROM sys_area WHERE name = '北京市'"];
-//        
-//        //NSString * sql = [NSString stringWithFormat:@"SELECT * FROM sys_area"];
-//        FMResultSet * rs = [db executeQuery:sql];
-//        while ([rs next]) {
-//            int Id = [rs intForColumn:@"ID"];
-//            NSString * name = [rs stringForColumn:@"NAME"];
-//            NSString * age = [rs stringForColumn:@"pinyin"];
-//            NSString * address = [rs stringForColumn:@"varchar"];
-//            NSLog(@"id = %d, name = %@, age = %@  address = %@", Id, name, age, address);
+    
+    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
+    
+    NSString *fileName = [doc stringByAppendingPathComponent:@"sys_area.sqlite"];
+
+    //2.获得数据库
+    FMDatabase *db = [FMDatabase databaseWithPath:fileName];
+    
+    if ([db open])
+    {
+//        //4.创表
+//        BOOL result = [db executeUpdate:@"CREATE TABLE 'sys_area' ('id' int(11) NOT NULL,'parent_id' int(11) NOT NULL,'name' varchar(30) NOT NULL,'alias' varchar(30) NOT NULL,'pinyin' varchar(20) NOT NULL,'abbr' varchar(10) NOT NULL,'zip' varchar(10) NOT NULL,'level' tinyint(1) NOT NULL,PRIMARY KEY ('id'));"];
+//        if (result)
+//        {
+//            NSLog(@"创建表成功");
 //        }
-//        [db close];
-//    }
-//    
-//    [db close];
-    
-    
-    NSArray *array = [str componentsSeparatedByString:@";"];
-    
-    //NSLog(@"%@",array);
-    
-    FMDatabase *db = [FMDatabase databaseWithPath:resourcePath];
-    
-//    if ([db open]) {
-//        
-//        for (NSString *str in array) {
-//            BOOL res = [db executeUpdate:str];
-//            
-//            if (!res) {
-//                //NSLog(@"error when creating db table");
-//            } else {
-//                //NSLog(@"成功了");
-//            }
-//        }
-//        
-//    }
-    
+        
+        
+        
+        [db executeUpdate:@"INSERT INTO `sys_area` VALUES ('820000', '0', '澳门特别行政区', '澳门', 'Macau', 'MAC', '', '1')"];
+    }
 }
 -(void)readText{
-    if (_filed.text.length==0) {
-        [self read:@"你真是个逗逼啊，先输入要说的话逗逼"];
+//    if (_filed.text.length==0) {
+//        [self read:@"你真是个逗逼啊，先输入要说的话逗逼"];
+//    }
+//    else{
+//        [self read:_filed.text];
+//    }
+    
+    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
+    
+    NSString *fileName = [doc stringByAppendingPathComponent:@"sys_area.sqlite"];
+    
+    //2.获得数据库
+    FMDatabase *db = [FMDatabase databaseWithPath:fileName];
+    
+    if ([db open])
+    {
+        //根据条件查询
+        FMResultSet *resultSet = [db executeQuery:@"select * from sys_area where name = '澳门特别行政区'"];
+        
+        //遍历结果集合
+        
+        while ([resultSet  next])
+            
+        {
+            NSString *name=[resultSet stringForColumn:@"name"];
+            NSString *pinyin=[resultSet stringForColumn:@"pinyin"];
+            int a= [resultSet intForColumn:@"parent_id"];
+            NSLog(@"%@,%d，%@",name,a,pinyin);
+        }
     }
-    else{
-        [self read:_filed.text];
-    }
+
+    
+    
 }
 //公告动画
 -(void)initSubViews{
