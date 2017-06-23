@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		815F21E61EF8B9B300C44D8F /* sys_area.sql in Resources */ = {isa = PBXBuildFile; fileRef = 815F21E51EF8B9B300C44D8F /* sys_area.sql */; };
+		815F21F31EF8BB9F00C44D8F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F21E91EF8BB9F00C44D8F /* FMDatabase.m */; };
+		815F21F41EF8BB9F00C44D8F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F21EB1EF8BB9F00C44D8F /* FMDatabaseAdditions.m */; };
+		815F21F51EF8BB9F00C44D8F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F21ED1EF8BB9F00C44D8F /* FMDatabasePool.m */; };
+		815F21F61EF8BB9F00C44D8F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F21EF1EF8BB9F00C44D8F /* FMDatabaseQueue.m */; };
+		815F21F71EF8BB9F00C44D8F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F21F21EF8BB9F00C44D8F /* FMResultSet.m */; };
 		8194DA991ED28A9900EDF3F4 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8194DA981ED28A9900EDF3F4 /* Speech.framework */; };
 		8194DA9C1ED28F8800EDF3F4 /* NFSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */; };
 		8194DA9F1ED2923100EDF3F4 /* 123.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8194DA9E1ED2923100EDF3F4 /* 123.mp3 */; };
+		81C465E81EF8BE19005B9401 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C465E71EF8BE19005B9401 /* libsqlite3.tbd */; };
 		81F140781ECC214A004621A3 /* EMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F140771ECC214A004621A3 /* EMAlertView.m */; };
 		81FCDA2F1EBDB354008E581D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FCDA2E1EBDB354008E581D /* main.m */; };
 		81FCDA321EBDB354008E581D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FCDA311EBDB354008E581D /* AppDelegate.m */; };
@@ -39,10 +46,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		815F21E51EF8B9B300C44D8F /* sys_area.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sys_area.sql; sourceTree = "<group>"; };
+		815F21E81EF8BB9F00C44D8F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		815F21E91EF8BB9F00C44D8F /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		815F21EA1EF8BB9F00C44D8F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		815F21EB1EF8BB9F00C44D8F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		815F21EC1EF8BB9F00C44D8F /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		815F21ED1EF8BB9F00C44D8F /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		815F21EE1EF8BB9F00C44D8F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		815F21EF1EF8BB9F00C44D8F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		815F21F01EF8BB9F00C44D8F /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		815F21F11EF8BB9F00C44D8F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		815F21F21EF8BB9F00C44D8F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8194DA981ED28A9900EDF3F4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		8194DA9A1ED28F8800EDF3F4 /* NFSpeechViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFSpeechViewController.h; sourceTree = "<group>"; };
 		8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFSpeechViewController.m; sourceTree = "<group>"; };
 		8194DA9E1ED2923100EDF3F4 /* 123.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 123.mp3; sourceTree = "<group>"; };
+		81C465E71EF8BE19005B9401 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		81F140761ECC214A004621A3 /* EMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertView.h; sourceTree = "<group>"; };
 		81F140771ECC214A004621A3 /* EMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertView.m; sourceTree = "<group>"; };
 		81FCDA2A1EBDB354008E581D /* LabelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C465E81EF8BE19005B9401 /* libsqlite3.tbd in Frameworks */,
 				8194DA991ED28A9900EDF3F4 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,9 +110,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		815F21E71EF8BB9F00C44D8F /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				815F21E81EF8BB9F00C44D8F /* FMDatabase.h */,
+				815F21E91EF8BB9F00C44D8F /* FMDatabase.m */,
+				815F21EA1EF8BB9F00C44D8F /* FMDatabaseAdditions.h */,
+				815F21EB1EF8BB9F00C44D8F /* FMDatabaseAdditions.m */,
+				815F21EC1EF8BB9F00C44D8F /* FMDatabasePool.h */,
+				815F21ED1EF8BB9F00C44D8F /* FMDatabasePool.m */,
+				815F21EE1EF8BB9F00C44D8F /* FMDatabaseQueue.h */,
+				815F21EF1EF8BB9F00C44D8F /* FMDatabaseQueue.m */,
+				815F21F01EF8BB9F00C44D8F /* FMDB.h */,
+				815F21F11EF8BB9F00C44D8F /* FMResultSet.h */,
+				815F21F21EF8BB9F00C44D8F /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		8194DA971ED28A9800EDF3F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81C465E71EF8BE19005B9401 /* libsqlite3.tbd */,
 				8194DA981ED28A9900EDF3F4 /* Speech.framework */,
 			);
 			name = Frameworks;
@@ -121,6 +161,7 @@
 		81FCDA2C1EBDB354008E581D /* LabelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				815F21E71EF8BB9F00C44D8F /* FMDB */,
 				81FCDA301EBDB354008E581D /* AppDelegate.h */,
 				81FCDA311EBDB354008E581D /* AppDelegate.m */,
 				81FCDA331EBDB354008E581D /* ViewController.h */,
@@ -130,6 +171,7 @@
 				81F140761ECC214A004621A3 /* EMAlertView.h */,
 				81F140771ECC214A004621A3 /* EMAlertView.m */,
 				8194DA9E1ED2923100EDF3F4 /* 123.mp3 */,
+				815F21E51EF8B9B300C44D8F /* sys_area.sql */,
 				81FCDA361EBDB354008E581D /* Main.storyboard */,
 				81FCDA391EBDB354008E581D /* Assets.xcassets */,
 				81FCDA3B1EBDB354008E581D /* LaunchScreen.storyboard */,
@@ -277,6 +319,7 @@
 				81FCDA3D1EBDB354008E581D /* LaunchScreen.storyboard in Resources */,
 				8194DA9F1ED2923100EDF3F4 /* 123.mp3 in Resources */,
 				81FCDA3A1EBDB354008E581D /* Assets.xcassets in Resources */,
+				815F21E61EF8B9B300C44D8F /* sys_area.sql in Resources */,
 				81FCDA381EBDB354008E581D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,8 +348,13 @@
 				81FCDA351EBDB354008E581D /* ViewController.m in Sources */,
 				8194DA9C1ED28F8800EDF3F4 /* NFSpeechViewController.m in Sources */,
 				81F140781ECC214A004621A3 /* EMAlertView.m in Sources */,
+				815F21F31EF8BB9F00C44D8F /* FMDatabase.m in Sources */,
+				815F21F71EF8BB9F00C44D8F /* FMResultSet.m in Sources */,
 				81FCDA321EBDB354008E581D /* AppDelegate.m in Sources */,
+				815F21F51EF8BB9F00C44D8F /* FMDatabasePool.m in Sources */,
+				815F21F41EF8BB9F00C44D8F /* FMDatabaseAdditions.m in Sources */,
 				81FCDA2F1EBDB354008E581D /* main.m in Sources */,
+				815F21F61EF8BB9F00C44D8F /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

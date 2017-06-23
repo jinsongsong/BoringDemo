@@ -10,6 +10,9 @@
 #import "EMAlertView.h"
 #import "NFSpeechViewController.h"
 #import <AVFoundation/AVFoundation.h>
+
+#import "FMDatabase.h"
+#import "FMDatabaseAdditions.h"
 @interface ViewController ()<AVSpeechSynthesizerDelegate>
 {
     UILabel *_first_lb;
@@ -43,7 +46,65 @@
 }
 
 -(void)changeVC{
-    [self presentViewController:[NFSpeechViewController new] animated:YES completion:nil];
+    
+    //跳转图图
+    //[[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"baisidatushoping://com.baisida.tutu"]];
+    
+    //跳转 语音
+    //[self presentViewController:[NFSpeechViewController new] animated:YES completion:nil];
+    
+    
+    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"sys_area" ofType:@"sql"];
+    NSString *str = [NSString stringWithContentsOfFile:resourcePath encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"---------------%@",str);
+    
+//    static FMDatabase *db;
+//
+//    db = [FMDatabase databaseWithPath:resourcePath];
+//    if (![db open]) {
+//        [db close];
+//        return;
+//    }
+//
+//    if ([db open]) {
+//        
+//        NSString *sql=[db stringForQuery:@"SELECT * FROM sys_area WHERE name = '北京市'"];
+//        
+//        //NSString * sql = [NSString stringWithFormat:@"SELECT * FROM sys_area"];
+//        FMResultSet * rs = [db executeQuery:sql];
+//        while ([rs next]) {
+//            int Id = [rs intForColumn:@"ID"];
+//            NSString * name = [rs stringForColumn:@"NAME"];
+//            NSString * age = [rs stringForColumn:@"pinyin"];
+//            NSString * address = [rs stringForColumn:@"varchar"];
+//            NSLog(@"id = %d, name = %@, age = %@  address = %@", Id, name, age, address);
+//        }
+//        [db close];
+//    }
+//    
+//    [db close];
+    
+    
+    NSArray *array = [str componentsSeparatedByString:@";"];
+    
+    //NSLog(@"%@",array);
+    
+    FMDatabase *db = [FMDatabase databaseWithPath:resourcePath];
+    
+//    if ([db open]) {
+//        
+//        for (NSString *str in array) {
+//            BOOL res = [db executeUpdate:str];
+//            
+//            if (!res) {
+//                //NSLog(@"error when creating db table");
+//            } else {
+//                //NSLog(@"成功了");
+//            }
+//        }
+//        
+//    }
+    
 }
 -(void)readText{
     if (_filed.text.length==0) {

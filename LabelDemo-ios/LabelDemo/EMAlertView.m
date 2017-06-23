@@ -19,6 +19,9 @@
 
 @implementation EMAlertView
 
+NSString* nihao(){
+    return @"2";
+}
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 void EMNoTitleAlert(NSString* message) {
