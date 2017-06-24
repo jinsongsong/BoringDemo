@@ -13,13 +13,17 @@
 
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
-@interface ViewController ()<AVSpeechSynthesizerDelegate>
+
+#import "PickView_JSS.h"  //地址选择
+
+@interface ViewController ()<AVSpeechSynthesizerDelegate,pickviewDelegate>
 {
     UILabel *_first_lb;
     UILabel *_second_lb;
     UITextField *_filed;
 }
 @property (nonatomic, strong) AVSpeechSynthesizer *aVSpeechSynthesizer;
+@property(nonatomic, strong)PickView_JSS* areaPick;
 @end
 
 @implementation ViewController
@@ -43,6 +47,40 @@
     [btn2 setTitle:@"语音转文字" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(changeVC) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
+    
+    
+    UIButton *btn11=[[UIButton alloc]initWithFrame:CGRectMake(50, 300, 200, 50)];
+    [btn11 setTitle:@"选择地址" forState:UIControlStateNormal];
+    btn11.backgroundColor=[UIColor brownColor];
+    [btn11 addTarget:self action:@selector(selectAdress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn11];
+    
+    //MARK:地址选择
+    _areaPick=[[PickView_JSS alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    //_areaPick.delegate=self;
+    _areaPick.hidden=YES;
+    [self.view addSubview:_areaPick];
+    [self.view bringSubviewToFront:_areaPick];
+
+    _areaPick.completeSelsct = ^(AdressModel *provinceStrModel, AdressModel *cityModel, AdressModel *areaModel) {
+        NSLog(@"省->>%@--省ID->>%d--父ID->>%d",provinceStrModel.name,provinceStrModel.ID,provinceStrModel.parent_id);
+        NSLog(@"市->>%@--市ID->>%d--父ID->>%d",cityModel.name,cityModel.ID,cityModel.parent_id);
+        NSLog(@"区->>%@--区ID->>%d--父ID->>%d",areaModel.name,areaModel.ID,areaModel.parent_id);
+    };
+    
+}
+//MARK:地址选择
+-(void)selectAdress:(UIButton*)btn{
+    [_areaPick viewShowWithAnimation];
+    
+    
+}
+//MARK:代理
+-(void)selectedProvinceModel:(AdressModel*)provinceStrModel cityModel:(AdressModel*)cityModel areaModel:(AdressModel*)areaModel{
+
+    NSLog(@"省->>%@--省ID->>%d--父ID->>%d",provinceStrModel.name,provinceStrModel.ID,provinceStrModel.parent_id);
+    NSLog(@"市->>%@--市ID->>%d--父ID->>%d",cityModel.name,cityModel.ID,cityModel.parent_id);
+    NSLog(@"区->>%@--区ID->>%d--父ID->>%d",areaModel.name,areaModel.ID,areaModel.parent_id);
 }
 
 -(void)changeVC{
@@ -54,66 +92,61 @@
     //[self presentViewController:[NFSpeechViewController new] animated:YES completion:nil];
     
     
-    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"sys_area" ofType:@"sql"];
-    NSString *str = [NSString stringWithContentsOfFile:resourcePath encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"---------------%@",str);
-    
-    
-    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
-    
-    NSString *fileName = [doc stringByAppendingPathComponent:@"sys_area.sqlite"];
-
-    //2.获得数据库
-    FMDatabase *db = [FMDatabase databaseWithPath:fileName];
-    
-    if ([db open])
-    {
-//        //4.创表
-//        BOOL result = [db executeUpdate:@"CREATE TABLE 'sys_area' ('id' int(11) NOT NULL,'parent_id' int(11) NOT NULL,'name' varchar(30) NOT NULL,'alias' varchar(30) NOT NULL,'pinyin' varchar(20) NOT NULL,'abbr' varchar(10) NOT NULL,'zip' varchar(10) NOT NULL,'level' tinyint(1) NOT NULL,PRIMARY KEY ('id'));"];
-//        if (result)
+//    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"sys_area" ofType:@"sql"];
+//    NSString *str = [NSString stringWithContentsOfFile:resourcePath encoding:NSUTF8StringEncoding error:nil];
+//    
+//    
+//    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
+//    
+//    NSString *fileName = [doc stringByAppendingPathComponent:@"sys_area.sqlite"];
+//
+//    //2.获得数据库
+//    FMDatabase *db = [FMDatabase databaseWithPath:fileName];
+//    
+//    if ([db open])
+//    {
+////        //4.创表
+////        BOOL result = [db executeUpdate:@"CREATE TABLE 'sys_area' ('id' int(11) NOT NULL,'parent_id' int(11) NOT NULL,'name' varchar(30) NOT NULL,'alias' varchar(30) NOT NULL,'pinyin' varchar(20) NOT NULL,'abbr' varchar(10) NOT NULL,'zip' varchar(10) NOT NULL,'level' tinyint(1) NOT NULL,PRIMARY KEY ('id'));"];
+////        if (result)
+////        {
+////            NSLog(@"创建表成功");
+////        }
+//        
+//        /*- (BOOL) isTableOK:(NSString *)tableName
 //        {
-//            NSLog(@"创建表成功");
-//        }
-        
-        
-        
-        [db executeUpdate:@"INSERT INTO `sys_area` VALUES ('820000', '0', '澳门特别行政区', '澳门', 'Macau', 'MAC', '', '1')"];
-    }
+//            FMResultSet *rs = [self.DB executeQuery:@"select count(*) as 'count' from sqlite_master where type ='table' and name = ?", tableName];
+//            while ([rs next])
+//            {
+//                // just print out what we've got in a number of formats.
+//                NSInteger count = [rs intForColumn:@"count"];
+//                NSLog(@"isTableOK %d", count);
+//                
+//                if (0 == count)
+//                {
+//                    return NO;
+//                }
+//                else
+//                {
+//                    return YES;
+//                }
+//            }
+//            
+//            return NO;
+//        }*/
+//        NSArray *arr=[str componentsSeparatedByString:@"-- ----------------------------"];
+//        NSArray *dataSource = [[arr lastObject] componentsSeparatedByString:@";"];
+//        NSLog(@"%@",dataSource[0]);
+//        
+//        [db executeUpdate:@"INSERT INTO `sys_area` VALUES ('820000', '0', '澳门特别行政区', '澳门', 'Macau', 'MAC', '', '1')"];
+//    }
 }
 -(void)readText{
-//    if (_filed.text.length==0) {
-//        [self read:@"你真是个逗逼啊，先输入要说的话逗逼"];
-//    }
-//    else{
-//        [self read:_filed.text];
-//    }
-    
-    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
-    
-    NSString *fileName = [doc stringByAppendingPathComponent:@"sys_area.sqlite"];
-    
-    //2.获得数据库
-    FMDatabase *db = [FMDatabase databaseWithPath:fileName];
-    
-    if ([db open])
-    {
-        //根据条件查询
-        FMResultSet *resultSet = [db executeQuery:@"select * from sys_area where name = '澳门特别行政区'"];
-        
-        //遍历结果集合
-        
-        while ([resultSet  next])
-            
-        {
-            NSString *name=[resultSet stringForColumn:@"name"];
-            NSString *pinyin=[resultSet stringForColumn:@"pinyin"];
-            int a= [resultSet intForColumn:@"parent_id"];
-            NSLog(@"%@,%d，%@",name,a,pinyin);
-        }
+    if (_filed.text.length==0) {
+        [self read:@"你真是个逗逼啊，先输入要说的话逗逼"];
     }
-
-    
-    
+    else{
+        [self read:_filed.text];
+    }
 }
 //公告动画
 -(void)initSubViews{

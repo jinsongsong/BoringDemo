@@ -16,6 +16,8 @@
 		8194DA991ED28A9900EDF3F4 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8194DA981ED28A9900EDF3F4 /* Speech.framework */; };
 		8194DA9C1ED28F8800EDF3F4 /* NFSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */; };
 		8194DA9F1ED2923100EDF3F4 /* 123.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8194DA9E1ED2923100EDF3F4 /* 123.mp3 */; };
+		81BDE3E21EFDFED500A3DF9E /* sys_area.db in Resources */ = {isa = PBXBuildFile; fileRef = 81BDE3E11EFDFED500A3DF9E /* sys_area.db */; };
+		81BDE3E41EFDFFC800A3DF9E /* PickView_JSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE3E31EFDFFC800A3DF9E /* PickView_JSS.m */; };
 		81C465E81EF8BE19005B9401 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C465E71EF8BE19005B9401 /* libsqlite3.tbd */; };
 		81F140781ECC214A004621A3 /* EMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F140771ECC214A004621A3 /* EMAlertView.m */; };
 		81FCDA2F1EBDB354008E581D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FCDA2E1EBDB354008E581D /* main.m */; };
@@ -62,6 +64,9 @@
 		8194DA9A1ED28F8800EDF3F4 /* NFSpeechViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFSpeechViewController.h; sourceTree = "<group>"; };
 		8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFSpeechViewController.m; sourceTree = "<group>"; };
 		8194DA9E1ED2923100EDF3F4 /* 123.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 123.mp3; sourceTree = "<group>"; };
+		81BDE3E11EFDFED500A3DF9E /* sys_area.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sys_area.db; sourceTree = "<group>"; };
+		81BDE3E31EFDFFC800A3DF9E /* PickView_JSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickView_JSS.m; sourceTree = "<group>"; };
+		81BDE3E51EFDFFD200A3DF9E /* PickView_JSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickView_JSS.h; sourceTree = "<group>"; };
 		81C465E71EF8BE19005B9401 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		81F140761ECC214A004621A3 /* EMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertView.h; sourceTree = "<group>"; };
 		81F140771ECC214A004621A3 /* EMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertView.m; sourceTree = "<group>"; };
@@ -170,7 +175,10 @@
 				8194DA9B1ED28F8800EDF3F4 /* NFSpeechViewController.m */,
 				81F140761ECC214A004621A3 /* EMAlertView.h */,
 				81F140771ECC214A004621A3 /* EMAlertView.m */,
+				81BDE3E51EFDFFD200A3DF9E /* PickView_JSS.h */,
+				81BDE3E31EFDFFC800A3DF9E /* PickView_JSS.m */,
 				8194DA9E1ED2923100EDF3F4 /* 123.mp3 */,
+				81BDE3E11EFDFED500A3DF9E /* sys_area.db */,
 				815F21E51EF8B9B300C44D8F /* sys_area.sql */,
 				81FCDA361EBDB354008E581D /* Main.storyboard */,
 				81FCDA391EBDB354008E581D /* Assets.xcassets */,
@@ -318,6 +326,7 @@
 			files = (
 				81FCDA3D1EBDB354008E581D /* LaunchScreen.storyboard in Resources */,
 				8194DA9F1ED2923100EDF3F4 /* 123.mp3 in Resources */,
+				81BDE3E21EFDFED500A3DF9E /* sys_area.db in Resources */,
 				81FCDA3A1EBDB354008E581D /* Assets.xcassets in Resources */,
 				815F21E61EF8B9B300C44D8F /* sys_area.sql in Resources */,
 				81FCDA381EBDB354008E581D /* Main.storyboard in Resources */,
@@ -352,6 +361,7 @@
 				815F21F71EF8BB9F00C44D8F /* FMResultSet.m in Sources */,
 				81FCDA321EBDB354008E581D /* AppDelegate.m in Sources */,
 				815F21F51EF8BB9F00C44D8F /* FMDatabasePool.m in Sources */,
+				81BDE3E41EFDFFC800A3DF9E /* PickView_JSS.m in Sources */,
 				815F21F41EF8BB9F00C44D8F /* FMDatabaseAdditions.m in Sources */,
 				81FCDA2F1EBDB354008E581D /* main.m in Sources */,
 				815F21F61EF8BB9F00C44D8F /* FMDatabaseQueue.m in Sources */,
