@@ -40,20 +40,28 @@
     if (self) {
         self.backgroundColor=kRGBA(51, 51, 51, .5);
         
-        //初始化数据
-        [self initSqliteData];
-        
-        //默认设置第一个
-        _provinceModel=_provinceArr[0];
-        _cityModel=_cityDic[_provinceModel.name][0];
-        _areaModel=_areaDic[_cityModel.name][0];
-        
-        [self initUI];
-        
-        //[self viewShowWithAnimation];
+        //异步加载数据 再创建UI
+        __weak PickView_JSS *weakSelf = self;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+            //初始化数据
+            [weakSelf initSqliteData];
+            
+            //默认设置第一个
+            weakSelf.provinceModel=_provinceArr[0];
+            weakSelf.cityModel=_cityDic[_provinceModel.name][0];
+            weakSelf.areaModel=_areaDic[_cityModel.name][0];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [weakSelf initUI];
+            });
+            
+        });
     }
     return self;
 }
+
 -(void)initUI
 {
     self.animationView = [[UIView alloc]initWithFrame:CGRectMake(0, self.bounds.size.height, self.bounds.size.width, 244)];

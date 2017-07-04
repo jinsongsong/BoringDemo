@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Speech/Speech.h>
 
+#import "PickView_JSS.h"  //地址选择
+
 @interface NFSpeechViewController ()<SFSpeechRecognitionTaskDelegate>
 @property (nonatomic ,strong) UILabel *speechText;
 @property (nonatomic ,strong) AVAudioEngine *auengine;
@@ -22,6 +24,20 @@
     self.view.backgroundColor=[UIColor whiteColor];
     _auengine = [[AVAudioEngine alloc] init];
     [self initSubViews];
+    
+    //MARK:地址选择
+    PickView_JSS *areaPick=[[PickView_JSS alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    //_areaPick.delegate=self;
+    areaPick.hidden=YES;
+    [self.view addSubview:areaPick];
+    [self.view bringSubviewToFront:areaPick];
+    
+    areaPick.completeSelsct = ^(AdressModel *provinceStrModel, AdressModel *cityModel, AdressModel *areaModel) {
+        NSLog(@"省->>%@--省ID->>%d--父ID->>%d",provinceStrModel.name,provinceStrModel.ID,provinceStrModel.parent_id);
+        NSLog(@"市->>%@--市ID->>%d--父ID->>%d",cityModel.name,cityModel.ID,cityModel.parent_id);
+        NSLog(@"区->>%@--区ID->>%d--父ID->>%d",areaModel.name,areaModel.ID,areaModel.parent_id);
+    };
+
 }
 
 -(void)initSubViews{

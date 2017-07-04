@@ -18,6 +18,7 @@
 		8194DA9F1ED2923100EDF3F4 /* 123.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8194DA9E1ED2923100EDF3F4 /* 123.mp3 */; };
 		81BDE3E21EFDFED500A3DF9E /* sys_area.db in Resources */ = {isa = PBXBuildFile; fileRef = 81BDE3E11EFDFED500A3DF9E /* sys_area.db */; };
 		81BDE3E41EFDFFC800A3DF9E /* PickView_JSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE3E31EFDFFC800A3DF9E /* PickView_JSS.m */; };
+		81BDE3ED1EFE662C00A3DF9E /* SQlDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE3EC1EFE662C00A3DF9E /* SQlDataBase.m */; };
 		81C465E81EF8BE19005B9401 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C465E71EF8BE19005B9401 /* libsqlite3.tbd */; };
 		81F140781ECC214A004621A3 /* EMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F140771ECC214A004621A3 /* EMAlertView.m */; };
 		81FCDA2F1EBDB354008E581D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FCDA2E1EBDB354008E581D /* main.m */; };
@@ -67,6 +68,8 @@
 		81BDE3E11EFDFED500A3DF9E /* sys_area.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sys_area.db; sourceTree = "<group>"; };
 		81BDE3E31EFDFFC800A3DF9E /* PickView_JSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickView_JSS.m; sourceTree = "<group>"; };
 		81BDE3E51EFDFFD200A3DF9E /* PickView_JSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickView_JSS.h; sourceTree = "<group>"; };
+		81BDE3EB1EFE662C00A3DF9E /* SQlDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQlDataBase.h; sourceTree = "<group>"; };
+		81BDE3EC1EFE662C00A3DF9E /* SQlDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQlDataBase.m; sourceTree = "<group>"; };
 		81C465E71EF8BE19005B9401 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		81F140761ECC214A004621A3 /* EMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertView.h; sourceTree = "<group>"; };
 		81F140771ECC214A004621A3 /* EMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertView.m; sourceTree = "<group>"; };
@@ -142,6 +145,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		81BDE3EA1EFE662C00A3DF9E /* SQLFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				81BDE3EB1EFE662C00A3DF9E /* SQlDataBase.h */,
+				81BDE3EC1EFE662C00A3DF9E /* SQlDataBase.m */,
+			);
+			path = SQLFMDB;
+			sourceTree = "<group>";
+		};
 		81FCDA211EBDB354008E581D = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +178,7 @@
 		81FCDA2C1EBDB354008E581D /* LabelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				81BDE3EA1EFE662C00A3DF9E /* SQLFMDB */,
 				815F21E71EF8BB9F00C44D8F /* FMDB */,
 				81FCDA301EBDB354008E581D /* AppDelegate.h */,
 				81FCDA311EBDB354008E581D /* AppDelegate.m */,
@@ -363,6 +376,7 @@
 				815F21F51EF8BB9F00C44D8F /* FMDatabasePool.m in Sources */,
 				81BDE3E41EFDFFC800A3DF9E /* PickView_JSS.m in Sources */,
 				815F21F41EF8BB9F00C44D8F /* FMDatabaseAdditions.m in Sources */,
+				81BDE3ED1EFE662C00A3DF9E /* SQlDataBase.m in Sources */,
 				81FCDA2F1EBDB354008E581D /* main.m in Sources */,
 				815F21F61EF8BB9F00C44D8F /* FMDatabaseQueue.m in Sources */,
 			);

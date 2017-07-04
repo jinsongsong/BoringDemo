@@ -13,6 +13,7 @@
 
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
+#import "SQlDataBase.h"
 
 #import "PickView_JSS.h"  //地址选择
 
@@ -84,65 +85,22 @@
 }
 
 -(void)changeVC{
+    //市-->>阿克苏地区--ID-->>652900--父类ID-->>650000
+    //[[SQlDataBase sharedDateBase] queryDataAccordingID:652900];
     
     //跳转图图
     //[[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"baisidatushoping://com.baisida.tutu"]];
     
     //跳转 语音
-    //[self presentViewController:[NFSpeechViewController new] animated:YES completion:nil];
-    
-    
-//    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"sys_area" ofType:@"sql"];
-//    NSString *str = [NSString stringWithContentsOfFile:resourcePath encoding:NSUTF8StringEncoding error:nil];
-//    
-//    
-//    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
-//    
-//    NSString *fileName = [doc stringByAppendingPathComponent:@"sys_area.sqlite"];
-//
-//    //2.获得数据库
-//    FMDatabase *db = [FMDatabase databaseWithPath:fileName];
-//    
-//    if ([db open])
-//    {
-////        //4.创表
-////        BOOL result = [db executeUpdate:@"CREATE TABLE 'sys_area' ('id' int(11) NOT NULL,'parent_id' int(11) NOT NULL,'name' varchar(30) NOT NULL,'alias' varchar(30) NOT NULL,'pinyin' varchar(20) NOT NULL,'abbr' varchar(10) NOT NULL,'zip' varchar(10) NOT NULL,'level' tinyint(1) NOT NULL,PRIMARY KEY ('id'));"];
-////        if (result)
-////        {
-////            NSLog(@"创建表成功");
-////        }
-//        
-//        /*- (BOOL) isTableOK:(NSString *)tableName
-//        {
-//            FMResultSet *rs = [self.DB executeQuery:@"select count(*) as 'count' from sqlite_master where type ='table' and name = ?", tableName];
-//            while ([rs next])
-//            {
-//                // just print out what we've got in a number of formats.
-//                NSInteger count = [rs intForColumn:@"count"];
-//                NSLog(@"isTableOK %d", count);
-//                
-//                if (0 == count)
-//                {
-//                    return NO;
-//                }
-//                else
-//                {
-//                    return YES;
-//                }
-//            }
-//            
-//            return NO;
-//        }*/
-//        NSArray *arr=[str componentsSeparatedByString:@"-- ----------------------------"];
-//        NSArray *dataSource = [[arr lastObject] componentsSeparatedByString:@";"];
-//        NSLog(@"%@",dataSource[0]);
-//        
-//        [db executeUpdate:@"INSERT INTO `sys_area` VALUES ('820000', '0', '澳门特别行政区', '澳门', 'Macau', 'MAC', '', '1')"];
-//    }
+    [self presentViewController:[NFSpeechViewController new] animated:YES completion:nil];
 }
 -(void)readText{
+    //区-->>中原区--ID-->>410102--父类ID-->>410100
+    //NSDictionary *dic=[[SQlDataBase sharedDateBase] queryDataWithAreaID:410102];
+
+    
     if (_filed.text.length==0) {
-        [self read:@"你真是个逗逼啊，先输入要说的话逗逼"];
+        [self read:@"周叙真是个逗逼啊"];
     }
     else{
         [self read:_filed.text];
