@@ -23,7 +23,7 @@
     UILabel *_second_lb;
     UITextField *_filed;
 }
-@property (nonatomic, strong) AVSpeechSynthesizer *aVSpeechSynthesizer;
+@property(nonatomic, strong) AVSpeechSynthesizer *aVSpeechSynthesizer;
 @property(nonatomic, strong)PickView_JSS* areaPick;
 @end
 
