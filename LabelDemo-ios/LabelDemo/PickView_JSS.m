@@ -48,9 +48,9 @@
             [weakSelf initSqliteData];
             
             //默认设置第一个
-            weakSelf.provinceModel=_provinceArr[0];
-            weakSelf.cityModel=_cityDic[_provinceModel.name][0];
-            weakSelf.areaModel=_areaDic[_cityModel.name][0];
+            weakSelf.provinceModel=weakSelf.provinceArr[0];
+            weakSelf.cityModel=weakSelf.cityDic[weakSelf.provinceModel.name][0];
+            weakSelf.areaModel=weakSelf.areaDic[weakSelf.cityModel.name][0];
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 
